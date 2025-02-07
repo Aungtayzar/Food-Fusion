@@ -11,4 +11,7 @@
         name="{{$name}}"
         class="w-full px-4 py-2 border rounded focus:outline-non"
     />
+    @error($name)
+      <p class="text-red-500 text-sm mt-1">{{$message}}</p>
+    @enderror 
 </div>

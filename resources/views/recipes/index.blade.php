@@ -26,7 +26,6 @@
             <li>No recipes found</li>
             @endforelse
     
-            <!-- More Recipe Cards (Repeat Similar Structure) -->
         </div>
     
         <!-- Pagination -->

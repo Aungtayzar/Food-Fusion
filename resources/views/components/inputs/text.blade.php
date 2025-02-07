@@ -7,5 +7,8 @@
         name="{{$name}}"
         placeholder="{{$placeholder}}" 
         class="{{$class}}"
-        value="{{$value}}"
+        value="{{old($name, $value)}}"
     />
+    @error($name)
+    <p class="text-red-500 text-sm mt-1">{{$message}}</p>    
+    @enderror

@@ -1,7 +1,7 @@
    <!-- Navigation  -->
    <header class="bg-orange-500 text-white" x-data="{open:false}">
     <div class="mx-auto flex justify-between items-center p-3">
-        <div class="text-2xl font-bold w-full md:w-auto md:text-left mb-2 md:mb-0"><a href="./index.html">Food Fusion</a></div>
+        <div class="text-2xl font-bold w-full md:w-auto md:text-left mb-2 md:mb-0"><a href="/">Food Fusion</a></div>
         <nav class="hidden md:flex bg-orange-500  p-4 justify-between items-center">
             <div class="flex flex-wrap justify-center w-full md:w-auto space-x-2 md:space-x-4">
                 <x-nav-link url="/recipes" :active="request()->is('recipes')">Recipes</x-nav-link>

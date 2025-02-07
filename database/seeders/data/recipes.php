@@ -2,6 +2,7 @@
 
 return [
     [
+        'image'=>'recipelogos/Classic Spaghetti Carbonara.jpg',
         "title"=>"Classic Spaghetti Carbonara",
         "description"=> "A creamy Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
         "ingredients"=>"Spaghetti, eggs, grated Parmesan cheese, pancetta, garlic, black pepper, salt.",
@@ -9,10 +10,10 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Chicken Tikka Masala.jpg',
         "title"=>"Chicken Tikka Masala",
         "description"=> "A flavorful Indian curry with marinated grilled chicken in a creamy tomato sauce.",
         "ingredients"=>"Chicken, yogurt, tomato puree, cream, garlic, ginger, spices (turmeric, cumin, coriander, garam masala).",
@@ -20,10 +21,10 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 30,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Beef Tacos.jpg',
         "title"=>"Beef Tacos",
         "description"=> "Mexican-style tacos with seasoned ground beef, lettuce, and cheese.",
         "ingredients"=>"Ground beef, taco seasoning, tortillas, lettuce, cheese, salsa.",
@@ -31,10 +32,10 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 15,
         "difficulty_level"=>"easy",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Vegetarian Stir-Fry.jpg',
         "title"=>"Vegetarian Stir-Fry",
         "description"=> "A healthy mix of vegetables stir-fried in a savory sauce.",
         "ingredients"=>"Broccoli, bell peppers, carrots, soy sauce, garlic, ginger, tofu.",
@@ -42,10 +43,10 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 10,
         "difficulty_level"=>"easy",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Chocolate Chip Cookies.jpg',
         "title"=>"Chocolate Chip Cookies",
         "description"=> "Soft and chewy cookies with melted chocolate chips.",
         "ingredients"=>"Flour, sugar, butter, eggs, chocolate chips, vanilla extract, baking soda.",
@@ -53,10 +54,10 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 12,
         "difficulty_level"=>"easy",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Margherita Pizza.jpg',
         "title"=>"Margherita Pizza",
         "description"=> "A simple Italian pizza with tomato, mozzarella, and basil.",
         "ingredients"=>"Pizza dough, tomato sauce, fresh mozzarella, basil, olive oil.",
@@ -64,10 +65,10 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Margherita Pizza.jpg',
         "title"=>"Margherita Pizza",
         "description"=> "A simple Italian pizza with tomato, mozzarella, and basil.",
         "ingredients"=>"Pizza dough, tomato sauce, fresh mozzarella, basil, olive oil.",
@@ -75,10 +76,10 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Thai Green Curry.jpg',
         "title"=>"Thai Green Curry",
         "description"=> "A spicy Thai curry made with green curry paste, coconut milk, and vegetables.",
         "ingredients"=>"Green curry paste, coconut milk, bamboo shoots, bell peppers, Thai basil, chicken.",
@@ -86,10 +87,10 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 20,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/French Onion Soup.jpg',
         "title"=>"French Onion Soup",
         "description"=> "A rich and savory soup made with caramelized onions and beef broth.",
         "ingredients"=>"Onions, beef broth, butter, thyme, baguette, Gruyère cheese.",
@@ -97,10 +98,10 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 40,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Sushi Rolls.jpg',
         "title"=>"Sushi Rolls",
         "description"=> "Japanese sushi rolls filled with fish, vegetables, and rice.",
         "ingredients"=>"Sushi rice, nori, fresh fish (tuna, salmon), cucumber, avocado, rice vinegar.",
@@ -108,10 +109,10 @@ return [
         "preparation_time"=>30,
         "cooking_time"=> 0,
         "difficulty_level"=>"hard",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Pancakes.jpg',
         "title"=>"Pancakes",
         "description"=> "Fluffy American-style pancakes served with syrup and butter.",
         "ingredients"=>"Flour, milk, eggs, sugar, baking powder, butter.",
@@ -119,10 +120,10 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 10,
         "difficulty_level"=>"easy",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Beef Bourguignon.jpg',
         "title"=>"Beef Bourguignon",
         "description"=> "A French stew made with beef, red wine, and vegetables.",
         "ingredients"=>"Beef, red wine, carrots, onions, mushrooms, garlic, thyme.",
@@ -130,10 +131,10 @@ return [
         "preparation_time"=>30,
         "cooking_time"=> 3,
         "difficulty_level"=>"hard",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Pad Thai.jpg',
         "title"=>"Pad Thai",
         "description"=> "A popular Thai noodle dish with a sweet and tangy flavor.",
         "ingredients"=>"Rice noodles, shrimp, tofu, eggs, peanuts, tamarind sauce.",
@@ -141,11 +142,11 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
 
     [    
+        'image'=>'recipelogos/Caesar Salad.jpg',
         "title"=> "Caesar Salad",
         "description"=> "A classic salad with romaine lettuce, croutons, and Caesar dressing.",
         "ingredients"=> "Romaine lettuce, croutons, Parmesan cheese, Caesar dressing, chicken (optional).",
@@ -153,10 +154,10 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 0,
         "difficulty_level"=> "easy",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Chicken Alfredo.jpg',
         "title"=>"Chicken Alfredo",
         "description"=> "Creamy pasta with chicken and Parmesan cheese",
         "ingredients"=>"Fettuccine, chicken, heavy cream, Parmesan cheese, garlic, butter.",
@@ -164,10 +165,10 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 20,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>'recipelogos/Miso Soup.jpg',
         "title"=>"Miso Soup",
         "description"=> "A traditional Japanese soup made with miso paste and tofu.",
         "ingredients"=>"Miso paste, tofu, seaweed, green onions, dashi stock.",
@@ -175,10 +176,10 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 10,
         "difficulty_level"=>"easy",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>"recipelogos/Shepherd's Pie.jpg",
         "title"=>"Shepherd's Pie",
         "description"=> "A British dish with minced meat and mashed potatoes.",
         "ingredients"=>"Ground lamb, potatoes, carrots, peas, gravy, butter.",
@@ -186,10 +187,10 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 30,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>"recipelogos/Ratatouille.jpg",
         "title"=>"Ratatouille",
         "description"=> "A French vegetable stew with eggplant, zucchini, and tomatoes.",
         "ingredients"=>"Eggplant, zucchini, tomatoes, bell peppers, onions, garlic, herbs.",
@@ -197,10 +198,10 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 40,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>"recipelogos/Fish and Chips.jpg",
         "title"=>"Fish and Chips",
         "description"=> "A British classic of fried fish and potato fries.",
         "ingredients"=>"White fish, flour, beer, potatoes, oil.",
@@ -208,10 +209,10 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 20,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>"recipelogos/Guacamole.jpg",
         "title"=>"Guacamole",
         "description"=> "A Mexican dip made with avocados, lime, and cilantro.",
         "ingredients"=>"Avocados, lime, cilantro, onions, tomatoes, salt.",
@@ -219,10 +220,10 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 0,
         "difficulty_level"=>"easy",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ],
     [
+        'image'=>"recipelogos/Tiramisu.jpg",
         "title"=>"Tiramisu",
         "description"=> "An Italian dessert with coffee-soaked ladyfingers and mascarpone cream.",
         "ingredients"=>"Ladyfingers, coffee, mascarpone cheese, eggs, sugar, cocoa powder.",
@@ -230,7 +231,6 @@ return [
         "preparation_time"=>30,
         "cooking_time"=> 0,
         "difficulty_level"=>"medium",
-        "user_id"=> 1,
         "cuisine_id"=> 1
     ]
 

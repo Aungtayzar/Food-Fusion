@@ -2,13 +2,13 @@
 
 <div class="bg-white shadow-lg rounded-lg overflow-hidden">
     <div class="h-48 bg-gray-300">
-        {{-- @if($recipe->image)
+        @if($recipe->image)
         <img
             src="/storage/{{$recipe->image}}"
             alt="{{$recipe->image}}"
-            class="w-14"
+            class="h-full w-full object-cover"
         />
-        @endif --}}
+        @endif
     </div>
     <div class="p-4">
         <h3 class="font-bold text-xl mb-2">{{$recipe->title}}</h3>
