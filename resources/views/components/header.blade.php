@@ -3,12 +3,20 @@
     <div class="mx-auto flex justify-between items-center p-3">
         <div class="text-2xl font-bold w-full md:w-auto md:text-left mb-2 md:mb-0"><a href="/">Food Fusion</a></div>
         <nav class="hidden md:flex bg-orange-500  p-4 justify-between items-center">
-            <div class="flex flex-wrap justify-center w-full md:w-auto space-x-2 md:space-x-4">
+            <div class="flex flex-wrap justify-center w-full md:w-auto space-x-2 md:space-x-4">              
+                @auth
                 <x-nav-link url="/recipes" :active="request()->is('recipes')">Recipes</x-nav-link>
                 <x-nav-link url="/cuisines" :active="request()->is('cuisines')">Cuisines</x-nav-link>
                 <x-nav-link url="/community" :active="request()->is('community')">Community</x-nav-link>
+                <form action="{{route('logout')}}" method="POST" class="mt-2">
+                    @csrf
+                    <button type="submit" class="text-white">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                      </button>
+                </form>
                 <x-button-link url="/recipes/create" icon="edit" >Create Recipe</x-button-link>
-                <x-button-link url="/loginandregister">Login and Register</x-button-link>
+                @endauth
+                <x-button-link url="/login" :active="request()->is('login')">Login</x-button-link>
             </div>
         
         </nav>

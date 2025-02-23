@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         DB::table('cuisines')->truncate();
         DB::table('recipes')->truncate();
         
+        $this->call(TestUserSeeder::class); 
         $this->call(RandomUserSeeder::class);
         $this->call(CuisineSeeder::class);
         $this->call(RecipeSeeder::class);

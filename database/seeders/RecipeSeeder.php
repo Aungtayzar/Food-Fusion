@@ -15,27 +15,35 @@ class RecipeSeeder extends Seeder
     public function run(): void
     {
          // Load recipes data
-    $recipes = include database_path('seeders/data/recipes.php');
+        $recipes = include database_path('seeders/data/recipes.php');
 
-    // Get all user IDs
-    $userIds = User::pluck('id')->toArray();
+        // Get the ID of the user created by TestUserSeeder
+        $testUserId = User::where('email', 'test@test.com')->value('id');
 
-    foreach ($recipes as &$recipe) {
-        // Assign a random user_id to each recipes table 
-        $recipe['user_id'] = $userIds[array_rand($userIds)];
+        // Get all other user IDs
+        $userIds = User::where('email', '!=', 'test@test.com')->pluck('id')->toArray();
+
+        foreach ($recipes as $index=>&$recipe) {
+            if ($index < 2) {
+                // Assign the first two job listings to the test user
+                $recipe['user_id'] = $testUserId;
+            } else {
+                // Assign the rest to random users
+                $recipe['user_id'] = $userIds[array_rand($userIds)];
+            }
 
 
-         // Add timestamps
-        $recipe['created_at'] = now();
-        $recipe['updated_at'] = now();
-    }
+            // Add timestamps
+            $recipe['created_at'] = now();
+            $recipe['updated_at'] = now();
+        }
 
-    //Hard code cuisine_id to 1
-    $recipe['cuisine_id'] = 1;
+        //Hard code cuisine_id to 1
+        $recipe['cuisine_id'] = 1;
 
     
 
-    // Insert Recipes table
-    DB::table('recipes')->insert($recipes);
+        // Insert Recipes table
+        DB::table('recipes')->insert($recipes);
     }
 }

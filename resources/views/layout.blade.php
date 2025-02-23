@@ -20,7 +20,6 @@
 @if(request()->is('recipes'))
 <x-recipe-header headermsg="Fusion Recipes"/>
 @endif
-
     <main class="container mx-auto p-4 mt-4">
     @if (session('success'))
     <x-alert type="success" message="{{ session('success') }}" />
@@ -61,6 +60,5 @@
 </footer>
 @endif
 
-    <script src="{{asset('js/script.js')}}"></script>
 </body>
 </html>
