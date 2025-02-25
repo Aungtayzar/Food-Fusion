@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cuisine;
 use App\Models\Recipe;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -11,11 +12,12 @@ use Illuminate\View\View;
 
 class RecipesController extends Controller
 {
+    use AuthorizesRequests;
     // @desc   Show all the recipes
     // @route  GET/recipes
     public function index():View
     {
-        $recipes = Recipe::all();
+        $recipes = Recipe::latest()->paginate(9);
         return view('recipes.index',compact('recipes'));
     }
 
@@ -46,7 +48,7 @@ class RecipesController extends Controller
         ]);
         
         //Hard code user id
-        $validateddata['user_id'] = 1;
+        $validateddata['user_id'] = auth()->user()->id;
         
 
         //Check for image
@@ -77,6 +79,8 @@ class RecipesController extends Controller
      */
     public function edit(Recipe $recipe):View
     {
+        // Check if the user is authorized
+        $this->authorize('update', $recipe);
         $cuisines = Cuisine::orderBy('name','asc')->get()->pluck('name','id');
         return view('recipes.edit')->with('cuisines',$cuisines)->with('recipe',$recipe);
     }
@@ -85,6 +89,8 @@ class RecipesController extends Controller
     // @route  PUT /recipes/{recipe}
     public function update(Request $request, Recipe $recipe):RedirectResponse
     {
+        // Check if the user is authorized
+        $this->authorize('update', $recipe);
         $validateddata = $request->validate([
             'image'=>'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'title'=>'required|string|max:255',
@@ -97,9 +103,9 @@ class RecipesController extends Controller
             'cuisine_id'=>'required|string'
 
         ]);
-        
+
         //Hard code user id
-        $validateddata['user_id'] = 1;
+        $validateddata['user_id'] = auth()->user()->id;
         
 
          //Check for image
@@ -115,7 +121,7 @@ class RecipesController extends Controller
             $validateData['image'] = $path;
         }
 
-        Recipe::create($validateddata);
+        $recipe->update($validateddata);
 
         return redirect()->route('recipes.index')->with('success','Update Recipe successfully');
     }
@@ -124,6 +130,8 @@ class RecipesController extends Controller
     // @route  DESTORY /recipes/{recipe}
     public function destroy(Recipe $recipe):RedirectResponse
     {
+        // Check if the user is authorized
+        $this->authorize('delete', $recipe);
 
         //if logo then delete it 
         if($recipe->image){

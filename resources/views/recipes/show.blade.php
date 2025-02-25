@@ -31,6 +31,7 @@
                 </div>
     
                 <!-- Update and Delete Buttons -->
+                @can('update',$recipe)
                 <div class="flex space-x-4">
                     <!-- Update Button -->
                     <a href="{{ route('recipes.edit', $recipe->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">
@@ -46,6 +47,7 @@
                         </button>
                     </form>
                 </div>
+                @endcan
             </div>
         </div>
     

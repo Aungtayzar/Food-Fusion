@@ -15,8 +15,9 @@
                       </button>
                 </form>
                 <x-button-link url="/recipes/create" icon="edit" >Create Recipe</x-button-link>
+                @else
+                <x-button-link url="/login">Login</x-button-link>
                 @endauth
-                <x-button-link url="/login" :active="request()->is('login')">Login</x-button-link>
             </div>
         
         </nav>
