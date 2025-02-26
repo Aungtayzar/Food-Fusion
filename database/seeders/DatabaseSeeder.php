@@ -17,12 +17,12 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->truncate();
         DB::table('cuisines')->truncate();
         DB::table('recipes')->truncate();
+        DB::table('culinary_resources')->truncate();
         
         $this->call(TestUserSeeder::class); 
         $this->call(RandomUserSeeder::class);
         $this->call(CuisineSeeder::class);
         $this->call(RecipeSeeder::class);
-
-        
+        $this->call(CulinaryResourcesSeeder::class);
     }
 }

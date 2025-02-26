@@ -6,6 +6,7 @@
             <div class="flex flex-wrap justify-center w-full md:w-auto space-x-2 md:space-x-4">              
                 @auth
                 <x-nav-link url="/recipes" :active="request()->is('recipes')">Recipes</x-nav-link>
+                <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')">Culinary Resources</x-nav-link>
                 <x-nav-link url="/cuisines" :active="request()->is('cuisines')">Cuisines</x-nav-link>
                 <x-nav-link url="/community" :active="request()->is('community')">Community</x-nav-link>
                 <form action="{{route('logout')}}" method="POST" class="mt-2">
@@ -31,14 +32,22 @@
             id="mobile-menu"
             class="md:hidden bg-orange-500 text-white mt-5 pb-4 space-y-2"
         >
-
+            @auth   
             <x-nav-link url="/recipes" :active="request()->is('recipes')" :mobile="true">Recipes</x-nav-link>
+            <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')" :mobile="true">Culinary Resources</x-nav-link>
             <x-nav-link url="/cuisines" :active="request()->is('cuisines')" :mobile="true">Cuisines</x-nav-link>
             <x-nav-link url="/community" :active="request()->is('community')" :mobile="true">Community</x-nav-link>
+            <form action="{{route('logout')}}" method="POST">
+                @csrf
+                <button type="submit" class="text-white ms-4">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                  </button>
+            </form>
+            <x-button-link url="/recipes/create" icon="edit" >Create Recipe</x-button-link>
+            @else
             <a href="./loginandregister.html" class="block px-4 py-2 hover:bg-orange-700"
                 >Login</a
             >
-            <x-button-link url="/recipes/create" icon="edit" >Create Recipe</x-button-link>
-            <x-button-link url="/loginandregister">Login and Register</x-button-link>
+            @endauth
         </div>
 </header>

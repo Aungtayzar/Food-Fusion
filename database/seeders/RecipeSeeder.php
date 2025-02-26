@@ -25,7 +25,7 @@ class RecipeSeeder extends Seeder
 
         foreach ($recipes as $index=>&$recipe) {
             if ($index < 2) {
-                // Assign the first two job listings to the test user
+                // Assign the first two recipes listings to the test user
                 $recipe['user_id'] = $testUserId;
             } else {
                 // Assign the rest to random users

@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CulinaryResourceController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,3 +24,8 @@ Route::middleware('guest')->group(function(){
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
+// Culinary Resources Routes
+Route::get('/culinary-resources', [CulinaryResourceController::class, 'index'])->name('culinary-resources.index')->middleware('auth');
+Route::get('/culinary-resources/create', [CulinaryResourceController::class, 'create'])->name('culinary-resources.create')->middleware('auth');
+Route::post('/culinary-resources', [CulinaryResourceController::class, 'store'])->name('culinary-resources.store')->middleware('auth');
+Route::get('/culinary-resources/{resource}/download', [CulinaryResourceController::class, 'download'])->name('culinary-resources.download')->middleware('auth');
