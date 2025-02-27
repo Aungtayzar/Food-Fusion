@@ -141,4 +141,20 @@ class RecipesController extends Controller
         $recipe->delete();
         return redirect()->route('recipes.index')->with('success','Delete Recipe successfully');
     }
+
+    // @desc   Search recipes
+    // @route  GET /recipes/search
+    public function search(Request $request): View
+    {
+        $search = $request->input('search');
+        
+        $recipes = Recipe::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->orWhere('ingredients', 'LIKE', "%{$search}%")
+            ->latest()
+            ->paginate(9);
+            
+        return view('recipes.index', compact('recipes'));
+    }
 }

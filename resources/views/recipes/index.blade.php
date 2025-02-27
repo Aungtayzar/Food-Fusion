@@ -1,4 +1,6 @@
 <x-layout>
+
+    
     
         <!-- Filters -->
         <div class="container mx-auto my-6 flex justify-between items-center">
@@ -6,16 +8,25 @@
                 <button class="bg-gray-200 px-4 py-2 rounded">All Recipes</button>
                 <button class="bg-gray-200 px-4 py-2 rounded">Asian Fusion</button>
                 <button class="bg-gray-200 px-4 py-2 rounded">Mexican Fusion</button>
-                <button class="bg-gray-200 px-4 py-2 rounded">More Filters</button>
-            </div>
-            <div>
                 <select class="px-4 py-2 rounded bg-gray-200">
                     <option>Sort by Newest</option>
                     <option>Most Popular</option>
                     <option>Highest Rated</option>
                 </select>
             </div>
+            <div>
+                <x-button-link url="/recipes/create" bgColor="orange-500" textColor="text-white" icon="edit" >Create Recipe</x-button-link>
+            </div>
         </div>
+
+        @if(request()->has('search'))
+            <a
+            href="{{ route('recipes.index') }}"
+            class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded mb-4 inline-block"
+            >
+            <i class="fa fa-arrow-left mr-1"></i> Back
+            </a>
+        @endif
     
         <!-- Recipes Grid -->
         <div class="container mx-auto grid grid-cols-3 gap-6 px-4 mb-3">

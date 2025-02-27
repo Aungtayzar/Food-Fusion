@@ -5,12 +5,5 @@
     @if($submsg)
     <p class="text-lg md:text-xl mb-8">{{$submsg}}</p>
     @endif
-    <div class="flex justify-center items-center relative shadow-lg rounded max-w-2xl mx-auto">
-        <input 
-            type="text" 
-            placeholder="Search fusion recipes..." 
-            class="px-12 outline-none py-3 rounded-full w-full text-gray-800"
-        />
-        <i class="fa-solid fa-magnifying-glass absolute left-4 text-gray-500"></i>
-    </div>
+    <x-search />
 </header>

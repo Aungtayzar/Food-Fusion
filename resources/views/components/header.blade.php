@@ -15,7 +15,6 @@
                         <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
                       </button>
                 </form>
-                <x-button-link url="/recipes/create" icon="edit" >Create Recipe</x-button-link>
                 @else
                 <x-button-link url="/login">Login</x-button-link>
                 @endauth
