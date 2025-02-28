@@ -8,17 +8,42 @@ use Illuminate\Support\Facades\Storage;
 
 class CulinaryResourceController extends Controller
 {
+    // @desc   Show all the Culinary Resource
+    // @route  GET/culinary-resources
     public function index()
     {
-        $resources = CulinaryResource::latest()->paginate(9);
-        return view('culinary-resources.index', compact('resources'));
+        $query = CulinaryResource::query();
+
+        // Filter by resource type
+        if (request('resource_type')) {
+            $query->where('type', request('resource_type'));
+        }
+
+        // Sort order
+        if (request('sort') === 'oldest') {
+            $query->oldest();
+        } else {
+            $query->latest();
+        }
+
+        $resources = $query->paginate(9)->withQueryString();
+        $resourceTypes = [
+            'tutorial' => 'Tutorial',
+            'recipe_card' => 'Recipe Card',
+            'video' => 'Video',
+        ];
+        
+        return view('culinary-resources.index', compact('resources', 'resourceTypes'));
+
     }
 
-    public function show(CulinaryResource $resource)
-    {
-        return view('culinary-resources.show', compact('resource'));
-    }
+    // public function show(CulinaryResource $resource)
+    // {
+    //     return view('culinary-resources.show', compact('resource'));
+    // }
 
+     // @desc   store Culinary Resource
+    // @route  POST/culinary-resources
     public function create()
     {
         return view('culinary-resources.create');

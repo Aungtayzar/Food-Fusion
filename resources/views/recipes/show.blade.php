@@ -1,5 +1,9 @@
 <x-layout>
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-3">
+        <a href="{{ route('recipes.index') }}" class="inline-flex items-center mb-6 text-blue-600 hover:text-blue-800">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Back to Recipes
+        </a>
         <div class="grid md:grid-cols-2 gap-8 bg-gray-300 rounded-lg shadow-lg">
             <!-- Recipe Image -->
             <div>
@@ -22,6 +26,10 @@
                     <div class="flex items-center">
                         <i class="fas fa-chart-bar text-gray-600 mr-2"></i>
                         <span>{{ $recipe->difficulty_level }}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-globe text-gray-600 mr-2"></i>
+                        <span>{{ $recipe->cuisine->name }}</span>
                     </div>
                 </div>
     

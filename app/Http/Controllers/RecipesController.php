@@ -17,8 +17,23 @@ class RecipesController extends Controller
     // @route  GET/recipes
     public function index():View
     {
-        $recipes = Recipe::latest()->paginate(9);
-        return view('recipes.index',compact('recipes'));
+        $query = Recipe::query();
+
+        // Filter by cuisine
+        if (request('cuisine')) {
+            $query->where('cuisine_id', request('cuisine'));
+        }
+
+        // Sort order
+        if (request('sort') === 'oldest') {
+            $query->oldest();
+        } else {
+            $query->latest();
+        }
+
+        $recipes = $query->paginate(9)->withQueryString();
+        $cuisines = Cuisine::orderBy('name')->get()->pluck('name','id')->toArray();
+        return view('recipes.index', compact('recipes', 'cuisines'));
     }
 
     /**

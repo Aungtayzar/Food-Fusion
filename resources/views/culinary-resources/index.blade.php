@@ -3,9 +3,23 @@
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-3xl font-bold text-gray-800">Culinary Resources</h1>
         @auth
+        <div class="flex items-center space-x-4">
+            <form action="{{ route('culinary-resources.index') }}" method="GET" class="inline-flex items-center space-x-4">
+                <x-select-filter 
+                    name="resource_type" 
+                    :options="$resourceTypes" 
+                    all="All Types" 
+                />
+                <x-select-filter 
+                    name="sort" 
+                    :options="['latest' => 'Sort by Newest', 'oldest' => 'Sort by Oldest']" 
+                    all="Sort by"
+                />
+            </form>
             <a href="{{ route('culinary-resources.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                 Upload Resource
             </a>
+        </div>
         @endauth
     </div>
 

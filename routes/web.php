@@ -29,13 +29,17 @@ Route::middleware('guest')->group(function(){
     Route::post('/forgot-password',[ForgotPasswordController::class,'passwordEmail'])->name('password.email');
     Route::get('/reset-password/{token}', [ForgotPasswordController::class,'passwordReset'])->name('password.reset');
     Route::post('/reset-password',[ForgotPasswordController::class,'passwordUpdate'])->name('password.update');
+
 });
 
-
+//logout Route
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
-// Culinary Resources Routes
-Route::get('/culinary-resources', [CulinaryResourceController::class, 'index'])->name('culinary-resources.index')->middleware('auth');
-Route::get('/culinary-resources/create', [CulinaryResourceController::class, 'create'])->name('culinary-resources.create')->middleware('auth');
-Route::post('/culinary-resources', [CulinaryResourceController::class, 'store'])->name('culinary-resources.store')->middleware('auth');
-Route::get('/culinary-resources/{resource}/download', [CulinaryResourceController::class, 'download'])->name('culinary-resources.download')->middleware('auth');
+Route::middleware('auth')->group(function(){
+
+    // Culinary Resources Routes
+    Route::get('/culinary-resources', [CulinaryResourceController::class, 'index'])->name('culinary-resources.index');
+    Route::get('/culinary-resources/create', [CulinaryResourceController::class, 'create'])->name('culinary-resources.create');
+    Route::post('/culinary-resources', [CulinaryResourceController::class, 'store'])->name('culinary-resources.store');
+    Route::get('/culinary-resources/{resource}/download', [CulinaryResourceController::class, 'download'])->name('culinary-resources.download');
+});

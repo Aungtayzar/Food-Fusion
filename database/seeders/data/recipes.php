@@ -21,7 +21,7 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 30,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 2
     ],
     [
         'image'=>'recipelogos/Beef Tacos.jpg',
@@ -32,7 +32,7 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 15,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 3
     ],
     [
         'image'=>'recipelogos/Vegetarian Stir-Fry.jpg',
@@ -43,7 +43,7 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 10,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 4
     ],
     [
         'image'=>'recipelogos/Chocolate Chip Cookies.jpg',
@@ -54,7 +54,7 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 12,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 5
     ],
     [
         'image'=>'recipelogos/Margherita Pizza.jpg',
@@ -68,12 +68,12 @@ return [
         "cuisine_id"=> 1
     ],
     [
-        'image'=>'recipelogos/Margherita Pizza.jpg',
-        "title"=>"Margherita Pizza",
-        "description"=> "A simple Italian pizza with tomato, mozzarella, and basil.",
-        "ingredients"=>"Pizza dough, tomato sauce, fresh mozzarella, basil, olive oil.",
-        "instructions"=>"Spread sauce on dough, add cheese and basil, bake at 475°F for 10-15 minutes.",
-        "preparation_time"=>20,
+        'image'=>'recipelogos/shrimp scampi.jpg',
+        "title"=>" Shrimp Scampi",
+        "description"=> " A classic Italian-American dish featuring succulent shrimp cooked in a garlicky, buttery white wine sauce, served over pasta.",
+        "ingredients"=>"Shrimp (peeled and deveined),Linguine or spaghetti,Butter,Olive oil,Garlic (minced),White wine,Lemon juice,Red pepper flakes (optional),Salt and black pepper,Fresh parsley (chopped),Parmesan cheese (optional)",
+        "instructions"=>"Cook the pasta according to package instructions. Drain and set aside.In a large skillet, heat butter and olive oil over medium heat.Add minced garlic and sauté until fragrant (about 1 minute).Add shrimp to the skillet and cook until pink and opaque (about 2-3 minutes per side).Pour in white wine and lemon juice, and season with salt, black pepper, and red pepper flakes (if using). Simmer for 2-3 minutes.Toss the cooked pasta in the skillet with the shrimp and sauce.Garnish with fresh parsley and grated Parmesan cheese (optional).Serve immediately",
+        "preparation_time"=>10,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
         "cuisine_id"=> 1
@@ -87,7 +87,7 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 20,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 6
     ],
     [
         'image'=>'recipelogos/French Onion Soup.jpg',
@@ -98,7 +98,7 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 40,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 7
     ],
     [
         'image'=>'recipelogos/Sushi Rolls.jpg',
@@ -109,7 +109,7 @@ return [
         "preparation_time"=>30,
         "cooking_time"=> 0,
         "difficulty_level"=>"hard",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 8
     ],
     [
         'image'=>'recipelogos/Pancakes.jpg',
@@ -120,7 +120,7 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 10,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 5
     ],
     [
         'image'=>'recipelogos/Beef Bourguignon.jpg',
@@ -131,7 +131,7 @@ return [
         "preparation_time"=>30,
         "cooking_time"=> 3,
         "difficulty_level"=>"hard",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 7
     ],
     [
         'image'=>'recipelogos/Pad Thai.jpg',
@@ -142,7 +142,7 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 6
     ],
 
     [    
@@ -154,7 +154,7 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 0,
         "difficulty_level"=> "easy",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 5
     ],
     [
         'image'=>'recipelogos/Chicken Alfredo.jpg',
@@ -176,7 +176,7 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 10,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 8
     ],
     [
         'image'=>"recipelogos/Shepherd's Pie.jpg",
@@ -187,7 +187,7 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 30,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 9
     ],
     [
         'image'=>"recipelogos/Ratatouille.jpg",
@@ -198,7 +198,7 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 40,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 7
     ],
     [
         'image'=>"recipelogos/Fish and Chips.jpg",
@@ -209,7 +209,7 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 20,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 9
     ],
     [
         'image'=>"recipelogos/Guacamole.jpg",
@@ -220,7 +220,7 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 0,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 3
     ],
     [
         'image'=>"recipelogos/Tiramisu.jpg",

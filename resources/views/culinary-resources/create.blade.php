@@ -22,7 +22,7 @@
             <div>
                 <x-inputs.file label="File" name="file" id="file" />
                 <p class="mt-1 text-sm text-gray-500">
-                    Supported formats: PDF, DOC, DOCX, MP4, MOV, JPG, JPEG, PNG (Max: 10MB)
+                    Supported formats: PDF, DOC, DOCX, JPG, JPEG, PNG (Max: 10MB) Movies and MP4 (Max: 300MB)
                 </p>
             </div>
 

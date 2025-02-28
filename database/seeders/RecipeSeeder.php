@@ -38,8 +38,6 @@ class RecipeSeeder extends Seeder
             $recipe['updated_at'] = now();
         }
 
-        //Hard code cuisine_id to 1
-        $recipe['cuisine_id'] = 1;
 
     
 

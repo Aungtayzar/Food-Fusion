@@ -1,18 +1,19 @@
 <x-layout>
-
-    
-    
         <!-- Filters -->
         <div class="container mx-auto my-6 flex justify-between items-center">
             <div class="space-x-4">
-                <button class="bg-gray-200 px-4 py-2 rounded">All Recipes</button>
-                <button class="bg-gray-200 px-4 py-2 rounded">Asian Fusion</button>
-                <button class="bg-gray-200 px-4 py-2 rounded">Mexican Fusion</button>
-                <select class="px-4 py-2 rounded bg-gray-200">
-                    <option>Sort by Newest</option>
-                    <option>Most Popular</option>
-                    <option>Highest Rated</option>
-                </select>
+                <form action="{{ route('recipes.index') }}" method="GET" class="inline-flex items-center space-x-4">
+                    <x-select-filter 
+                        name="cuisine" 
+                        :options="$cuisines" 
+                        all="All Cuisines" 
+                    />
+                    <x-select-filter 
+                        name="sort" 
+                        :options="['latest' => 'Sort by Newest', 'oldest' => 'Sort by Oldest']" 
+                        all="Sort by"
+                    />
+                </form>
             </div>
             <div>
                 <x-button-link url="/recipes/create" bgColor="orange-500" textColor="text-white" icon="edit" >Create Recipe</x-button-link>

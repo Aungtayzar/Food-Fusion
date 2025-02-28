@@ -3,7 +3,8 @@
     <div class="mx-auto flex justify-between items-center p-3">
         <div class="text-2xl font-bold w-full md:w-auto md:text-left mb-2 md:mb-0"><a href="/">Food Fusion</a></div>
         <nav class="hidden md:flex bg-orange-500  p-4 justify-between items-center">
-            <div class="flex flex-wrap justify-center w-full md:w-auto space-x-2 md:space-x-4">              
+            <div class="flex flex-wrap justify-center w-full md:w-auto space-x-2 md:space-x-4">    
+                <x-nav-link url="/" :active="request()->is('/')">Home</x-nav-link>          
                 @auth
                 <x-nav-link url="/recipes" :active="request()->is('recipes')">Recipes</x-nav-link>
                 <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')">Culinary Resources</x-nav-link>
