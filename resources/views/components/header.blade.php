@@ -10,6 +10,7 @@
                 <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')">Culinary Resources</x-nav-link>
                 <x-nav-link url="/cuisines" :active="request()->is('cuisines')">Cuisines</x-nav-link>
                 <x-nav-link url="/community" :active="request()->is('community')">Community</x-nav-link>
+                <x-nav-link url="/dashboard" :active="request()->is('community')">Dashboard</x-nav-link>
                 <form action="{{route('logout')}}" method="POST" class="mt-2">
                     @csrf
                     <button type="submit" class="text-white">

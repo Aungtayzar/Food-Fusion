@@ -6,6 +6,7 @@ use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CulinaryResourceController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\RecipeInteractionController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,6 +17,11 @@ Route::get('/recipes/search', [RecipesController::class, 'search'])->name('recip
 Route::resource('/recipes',RecipesController::class)->middleware('auth')->only(['create','edit','destory']);
 Route::resource('/recipes',RecipesController::class)->middleware('auth')->except(['create','edit','destory']);
 
+// Recipe interactions
+Route::middleware(['auth'])->group(function () {
+    Route::post('/recipes/{recipe}/comments', [RecipeInteractionController::class, 'addComment'])->name('recipes.comments.add');
+    Route::post('/recipes/{recipe}/favorite', [RecipeInteractionController::class, 'toggleFavorite'])->name('recipes.favorite.toggle');
+});
 
 Route::middleware('guest')->group(function(){
     //login and reigster Routes

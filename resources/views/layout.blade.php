@@ -63,6 +63,8 @@
         </div>
     </div>
 </footer>
+{{-- in your blade template --}}
+@include('cookie-consent::index')
 @endif
 <script>
      document.addEventListener('alpine:init', () => {

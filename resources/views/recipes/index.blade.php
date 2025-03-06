@@ -42,10 +42,5 @@
     
         <!-- Pagination -->
         {{$recipes->links()}}
-        {{-- <div class="container mx-auto flex justify-center my-8 space-x-2">
-            <button class="px-4 py-2 bg-gray-200 rounded">1</button>
-            <button class="px-4 py-2 bg-gray-200 rounded">2</button>
-            <button class="px-4 py-2 bg-gray-200 rounded">3</button>
-            <button class="px-4 py-2 bg-orange-500 text-white rounded">Next</button>
-        </div> --}}
+        
 </x-layout>

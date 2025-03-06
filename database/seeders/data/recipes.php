@@ -10,7 +10,9 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 1,
+        "cooking_tips" => "Use freshly grated Parmesan for the best flavor and texture.",
+        "personal_notes" => "This dish is perfect for a quick yet elegant dinner. Be careful not to scramble the eggs when mixing!"
     ],
     [
         'image'=>'recipelogos/Chicken Tikka Masala.jpg',
@@ -21,7 +23,9 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 30,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 2
+        "cuisine_id"=> 2,
+        "cooking_tips" => "Let the chicken marinate for at least 2 hours for maximum flavor.",
+        "personal_notes" => "This curry is a crowd-pleaser and pairs wonderfully with naan or rice."
     ],
     [
         'image'=>'recipelogos/Beef Tacos.jpg',
@@ -32,7 +36,9 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 15,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 3
+        "cuisine_id"=> 3,
+        "cooking_tips" => "Warm the tortillas in a dry skillet for a more authentic taste.",
+        "personal_notes" => "Tacos are so versatile—feel free to add your favorite toppings like guacamole or sour cream!"
     ],
     [
         'image'=>'recipelogos/Vegetarian Stir-Fry.jpg',
@@ -43,7 +49,9 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 10,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 4
+        "cuisine_id"=> 4,
+        "cooking_tips" => "Cook the tofu separately for a crispy texture before adding it to the stir-fry.",
+        "personal_notes" => "This is my go-to recipe for a quick, healthy weeknight meal."
     ],
     [
         'image'=>'recipelogos/Chocolate Chip Cookies.jpg',
@@ -54,7 +62,9 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 12,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 5
+        "cuisine_id"=> 5,
+        "cooking_tips" => "Chill the dough for 30 minutes before baking to prevent spreading.",
+        "personal_notes" => "These cookies are a classic—I love making them with dark chocolate chips for a richer flavor."
     ],
     [
         'image'=>'recipelogos/Margherita Pizza.jpg',
@@ -65,7 +75,9 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 1,
+        "cooking_tips" => "Use a pizza stone or preheat your baking sheet for a crispier crust.",
+        "personal_notes" => "This pizza is a reminder of my trip to Naples—simple yet incredibly flavorful."
     ],
     [
         'image'=>'recipelogos/shrimp scampi.jpg',
@@ -76,7 +88,9 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 1,
+        "cooking_tips" => "Do not overcook the shrimp—they should be just pink and tender.",
+        "personal_notes" => "This dish feels so luxurious but is surprisingly easy to make. Perfect for date night!"
     ],
     [
         'image'=>'recipelogos/Thai Green Curry.jpg',
@@ -87,7 +101,9 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 20,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 6
+        "cuisine_id"=> 6,
+        "cooking_tips" => "Use fresh Thai basil for an authentic flavor.",
+        "personal_notes" => "This curry is a staple in my home—I love how fragrant and comforting it is."
     ],
     [
         'image'=>'recipelogos/French Onion Soup.jpg',
@@ -98,7 +114,9 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 40,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 7
+        "cuisine_id"=> 7,
+        "cooking_tips" => "Caramelize the onions slowly for the best flavor—it is worth the time!",
+        "personal_notes" => "This soup is my ultimate comfort food, especially on a cold winter day."
     ],
     [
         'image'=>'recipelogos/Sushi Rolls.jpg',
@@ -109,7 +127,9 @@ return [
         "preparation_time"=>30,
         "cooking_time"=> 0,
         "difficulty_level"=>"hard",
-        "cuisine_id"=> 8
+        "cuisine_id"=> 8,
+        "cooking_tips" => "Use a sharp knife to cut the rolls, and dip it in water between slices to prevent sticking.",
+        "personal_notes" => "Making sushi at home is so rewarding—it is like edible art!"
     ],
     [
         'image'=>'recipelogos/Pancakes.jpg',
@@ -120,7 +140,9 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 10,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 5
+        "cuisine_id"=> 5,
+        "cooking_tips" => "Do not overmix the batter—it is okay if it is a little lumpy.",
+        "personal_notes" => "Weekend mornings are made better with a stack of these pancakes."
     ],
     [
         'image'=>'recipelogos/Beef Bourguignon.jpg',
@@ -131,7 +153,9 @@ return [
         "preparation_time"=>30,
         "cooking_time"=> 3,
         "difficulty_level"=>"hard",
-        "cuisine_id"=> 7
+        "cuisine_id"=> 7,
+        "cooking_tips" => "Use a good-quality red wine for the best flavor.",
+        "personal_notes" => "This dish is worth the wait—it is rich, hearty, and perfect for special occasions."
     ],
     [
         'image'=>'recipelogos/Pad Thai.jpg',
@@ -142,7 +166,9 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 15,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 6
+        "cuisine_id"=> 6,
+        "cooking_tips" => "Soak the rice noodles just until they are pliable but not fully soft.",
+        "personal_notes" => "This dish always reminds me of street food in Bangkok—so vibrant and flavorful."
     ],
 
     [    
@@ -154,7 +180,9 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 0,
         "difficulty_level"=> "easy",
-        "cuisine_id"=> 5
+        "cuisine_id"=> 5,
+        "cooking_tips" => "Make your own croutons for extra crunch and flavor.",
+        "personal_notes" => "This salad is a classic for a reason—it is simple yet always satisfying."
     ],
     [
         'image'=>'recipelogos/Chicken Alfredo.jpg',
@@ -165,7 +193,9 @@ return [
         "preparation_time"=>15,
         "cooking_time"=> 20,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 1,
+        "cooking_tips" => "Use freshly grated Parmesan for a smoother sauce.",
+        "personal_notes" => "This dish is pure comfort food—creamy, rich, and delicious."
     ],
     [
         'image'=>'recipelogos/Miso Soup.jpg',
@@ -176,7 +206,9 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 10,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 8
+        "cuisine_id"=> 8,
+        "cooking_tips" => "Add the miso paste at the end to preserve its flavor and nutrients.",
+        "personal_notes" => "This soup is so soothing—it’s my go-to when I need something light and nourishing."
     ],
     [
         'image'=>"recipelogos/Shepherd's Pie.jpg",
@@ -187,7 +219,9 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 30,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 9
+        "cuisine_id"=> 9,
+        "cooking_tips" => "Add a little cheese to the mashed potatoes for extra flavor.",
+        "personal_notes" => "This dish is so hearty and comforting—it is like a warm hug on a plate."
     ],
     [
         'image'=>"recipelogos/Ratatouille.jpg",
@@ -198,7 +232,9 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 40,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 7
+        "cuisine_id"=> 7,
+        "cooking_tips" => "Layer the vegetables neatly for a visually stunning presentation.",
+        "personal_notes" => "This dish is as beautiful as it is delicious—it is a true celebration of summer vegetables."
     ],
     [
         'image'=>"recipelogos/Fish and Chips.jpg",
@@ -209,7 +245,9 @@ return [
         "preparation_time"=>20,
         "cooking_time"=> 20,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 9
+        "cuisine_id"=> 9,
+        "cooking_tips" => "Use a light beer for the batter to make it extra crispy.",
+        "personal_notes" => "This dish takes me back to seaside vacations—crispy, golden, and utterly satisfying."
     ],
     [
         'image'=>"recipelogos/Guacamole.jpg",
@@ -220,7 +258,9 @@ return [
         "preparation_time"=>10,
         "cooking_time"=> 0,
         "difficulty_level"=>"easy",
-        "cuisine_id"=> 3
+        "cuisine_id"=> 3,
+        "cooking_tips" => "Leave the avocado pit in the guacamole to help prevent browning.",
+        "personal_notes" => "This guacamole is a party favorite—it is fresh, zesty, and always disappears fast!"
     ],
     [
         'image'=>"recipelogos/Tiramisu.jpg",
@@ -231,7 +271,9 @@ return [
         "preparation_time"=>30,
         "cooking_time"=> 0,
         "difficulty_level"=>"medium",
-        "cuisine_id"=> 1
+        "cuisine_id"=> 1,
+        "cooking_tips" => "Use strong espresso for a more intense coffee flavor.",
+        "personal_notes" => "This dessert is a showstopper—it is creamy, decadent, and always impresses guests."
     ]
 
 ]
