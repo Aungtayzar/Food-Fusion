@@ -38,6 +38,16 @@
                 <x-inputs.select label="Difficulty Level" name="difficulty_level" id="difficulty_level" :options="['easy'=>'Easy','medium'=>'Medium','hard'=>'Hard']" />
             </div>
 
+            <!-- Cooking Tips-->
+            <div class="mt-4">
+                <x-inputs.text-area label="Cooking Tips" name="cooking_tips" id="cooking_tips" placeholder="Write Some Cooking tips"/>
+            </div>
+
+            <!-- Personal notes-->
+            <div class="mt-4">
+                <x-inputs.text-area label="Personal Notes" name="personal_notes" id="personal_notes" placeholder="Take a notes!"/>
+            </div>
+
             <!-- Image Upload -->
             <x-inputs.file label="Recipe Image" name="image" id="image" />
             

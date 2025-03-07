@@ -8,9 +8,23 @@
                 @auth
                 <x-nav-link url="/recipes" :active="request()->is('recipes')">Recipes</x-nav-link>
                 <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')">Culinary Resources</x-nav-link>
-                <x-nav-link url="/cuisines" :active="request()->is('cuisines')">Cuisines</x-nav-link>
-                <x-nav-link url="/community" :active="request()->is('community')">Community</x-nav-link>
-                <x-nav-link url="/dashboard" :active="request()->is('community')">Dashboard</x-nav-link>
+                <div class="flex items-center space-x-3">
+                    <a href="{{ route('dashboard') }}">
+                      @if(Auth::user()->avatar)
+                      <img
+                        src="{{ asset('storage/' . Auth::user()->avatar) }}"
+                        alt="{{ Auth::user()->name }}"
+                        class="w-10 h-10 rounded-full"
+                      />
+                      @else
+                      <img
+                        src="{{ asset('storage/avatars/default-avatar.png') }}"
+                        alt="{{ Auth::user()->name }}"
+                        class="w-10 h-10 rounded-full"
+                      />
+                      @endif
+                    </a>
+                  </div>
                 <form action="{{route('logout')}}" method="POST" class="mt-2">
                     @csrf
                     <button type="submit" class="text-white">

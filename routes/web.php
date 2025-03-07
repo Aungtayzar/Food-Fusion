@@ -5,12 +5,23 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CulinaryResourceController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FavouriteRecipeController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipeInteractionController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[HomeController::class,'index'])->name('home');
+//Dashboard Routes
+Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard')->middleware('auth');
+
+//Profile
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+
+//Favourit Recipes Route
+Route::get('/favouriterecipes', [FavouriteRecipeController::class, 'index'])->name('favouriterecipes.index')->middleware('auth');
 
 //recipes Routes
 Route::get('/recipes/search', [RecipesController::class, 'search'])->name('recipes.search')->middleware('auth');

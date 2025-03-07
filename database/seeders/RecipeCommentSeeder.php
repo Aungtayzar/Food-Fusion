@@ -18,11 +18,12 @@ class RecipeCommentSeeder extends Seeder
         // Load recipe comment data
         $recipe_comments = include database_path('seeders/data/recipe_comments.php');
 
-        // Get user IDs
+        // Get available user IDs
         $userIDs = User::pluck('id')->toArray();
         
-        // Get recipe IDs
+        // Get available recipe IDs
         $recipeIDs = Recipe::pluck('id')->toArray();
+
         foreach ($recipe_comments as &$recipe_comment) {
 
                 $recipe_comment['user_id'] = $userIDs[array_rand($userIDs)] ;

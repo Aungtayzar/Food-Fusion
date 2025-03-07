@@ -58,7 +58,10 @@ class RecipesController extends Controller
             'preparation_time'=>'required|integer',
             'cooking_time'=>'required|integer',
             'difficulty_level'=>'required|string',
+            'cooking_tips'=>'nullable|string',
+            'personal_notes'=>'nullable|string',
             'cuisine_id'=>'required|string'
+
 
         ]);
         

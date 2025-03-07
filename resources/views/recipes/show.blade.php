@@ -25,10 +25,10 @@
             </div>
     
             <!-- Recipe Content -->
-            <div class="p-8">
+            <div class="p-8 mt-5">
                 <div class="flex items-center justify-between mb-6">
                     <h1 class="text-4xl font-bold text-gray-800">{{ $recipe->title }}</h1>
-                    <div class="text-gray-600">
+                    <div class="text-gray-600 me-2">
                         <i class="fas fa-user-circle mr-2"></i>
                         By {{ $recipe->user->name }}
                     </div>
@@ -166,7 +166,14 @@
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between">
                                             <h3 class="text-md font-medium text-gray-900 flex items-center">
-                                                <i class="fas fa-user-circle mr-2 text-gray-500"></i>
+                                                @if($comment->user->avatar)
+                                                    <img src="{{ asset('storage/' . $comment->user->avatar) }}" 
+                                                         alt="{{ $comment->user->name }}'s avatar" 
+                                                         class="w-8 h-8 rounded-full object-cover mr-2"
+                                                    />
+                                                @else
+                                                    <i class="fas fa-user-circle mr-2 text-gray-500 text-2xl"></i>
+                                                @endif
                                                 {{ $comment->user->name }}
                                             </h3>
                                             <p class="text-sm text-gray-500 flex items-center">

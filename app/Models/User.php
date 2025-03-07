@@ -23,6 +23,7 @@ class User extends Authenticatable implements CanResetPassword
         'name',
         'email',
         'password',
+        'avatar'
     ];
 
     /**
@@ -51,5 +52,29 @@ class User extends Authenticatable implements CanResetPassword
     //Relation to Recipe 
     public function Recipe():HasMany{
         return $this->hasMany(Recipe::class);
+    }
+
+    /**
+     * Get all recipes created by the user
+     */
+    public function recipes():HasMany
+    {
+        return $this->hasMany(Recipe::class);
+    }
+
+    /**
+     * Get all favorite recipes of the user
+     */
+    public function favorites():HasMany
+    {
+        return $this->hasMany(RecipeFavorite::class);
+    }
+
+    /**
+     * Get all comments made by the user
+     */
+    public function comments():HasMany
+    {
+        return $this->hasMany(RecipeComment::class);
     }
 }
