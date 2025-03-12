@@ -5,6 +5,14 @@
                 
                 <form method="POST" action="{{ route('register') }}" class="space-y-6">
                     @csrf
+
+                    <div>
+                        <x-inputs.text name="firstname" id="firstname" label="Firstname" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" placeholder="Enter your Firstname..."/>
+                    </div>
+
+                    <div>
+                        <x-inputs.text name="lastname" id="lastname" label="Lastname" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" placeholder="Enter your lastname..."/>
+                    </div>
                     
                     <div>
                         <x-inputs.text name="name" id="name" label="Username" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" placeholder="Enter your username..."/>

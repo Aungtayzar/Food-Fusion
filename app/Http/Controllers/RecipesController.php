@@ -175,4 +175,13 @@ class RecipesController extends Controller
             
         return view('recipes.index', compact('recipes'));
     }
+
+    // @desc   Search recipes
+    // @route  GET /dashboardmyrecipes
+    public function myrecipes(): View
+    {
+        $recipes = auth()->user()->recipes()->latest()->paginate(9);
+        return view('dashboard.myrecipes', compact('recipes'));
+    }
+
 }

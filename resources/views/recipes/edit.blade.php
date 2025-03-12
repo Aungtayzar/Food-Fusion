@@ -1,8 +1,15 @@
 <x-layout>
     <div class="container mx-auto px-4 py-8">
+        
+        
+            <a href="{{ route('dashboardmyrecipes.myrecipes') }}" class="inline-flex justify-center items-center mb-6 text-indigo-600 hover:text-indigo-800 transition-colors duration-200">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to dashboard
+            </a>
         <form class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6" action="{{route('recipes.update',$recipe->id)}}" method="POST" enctype="multipart/form-data">
             @csrf 
             @method('PUT')
+            
             <h2 class="text-3xl font-bold text-center mb-6 text-orange-500">Update Your Fusion Recipe</h2>
             
             <!-- Recipe Basic Information -->

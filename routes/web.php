@@ -23,6 +23,13 @@ Route::put('/profile', [ProfileController::class, 'update'])->name('profile.upda
 //Favourit Recipes Route
 Route::get('/favouriterecipes', [FavouriteRecipeController::class, 'index'])->name('favouriterecipes.index')->middleware('auth');
 
+//dashboard myrecipes Route
+Route::get('/dashboardmyrecipes', [RecipesController::class, 'myrecipes'])->name('dashboardmyrecipes.myrecipes')->middleware('auth');
+
+//Recipe Collection Routes
+
+
+
 //recipes Routes
 Route::get('/recipes/search', [RecipesController::class, 'search'])->name('recipes.search')->middleware('auth');
 Route::resource('/recipes',RecipesController::class)->middleware('auth')->only(['create','edit','destory']);

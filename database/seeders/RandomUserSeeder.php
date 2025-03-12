@@ -15,7 +15,6 @@ class RandomUserSeeder extends Seeder
 {
     // Create 10 users using the UserFactory
     $users = User::factory(10)->create();
-
     echo "Users created successfully!";
 }
 }

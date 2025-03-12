@@ -25,7 +25,7 @@
                 </svg>
                 <span>Profile</span>
             </a>
-            <a href="{{ route('recipes.index') }}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('/') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200">
+            <a href="{{ route('dashboardmyrecipes.myrecipes') }}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('dashboardmyrecipes') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200">
                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" />
                 </svg>
