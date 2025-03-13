@@ -8,6 +8,12 @@
                         :options="$cuisines" 
                         all="All Cuisines" 
                     />
+
+                    <x-select-filter 
+                        name="dietary_preference" 
+                        :options="$dietaryPreferences" 
+                        all="All Dietary Preferences" 
+                    />
                     <x-select-filter 
                         name="sort" 
                         :options="['latest' => 'Sort by Newest', 'oldest' => 'Sort by Oldest']" 

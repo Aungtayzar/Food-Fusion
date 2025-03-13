@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Recipe extends Model
@@ -35,14 +36,23 @@ class Recipe extends Model
         return $this->belongsTo(Cuisine::class);
     }
 
+    //Relation to RecipeComment
     public function comments(): HasMany
     {
         return $this->hasMany(RecipeComment::class);
     }
 
+    //Relation to favourite Recipes
     public function favorites(): HasMany
     {
         return $this->hasMany(RecipeFavorite::class);
+    }
+
+    //Relation to DietaryPreference
+    public function dietaryPreferences() : BelongsToMany
+    {
+        return $this->belongsToMany(DietaryPreference::class, 'recipe_dietary_preferences')
+                    ->withTimestamps();
     }
 
     public function isFavoritedByUser($userId)

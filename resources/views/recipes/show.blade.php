@@ -95,6 +95,21 @@
                                     </p>
                                     <p class="font-medium text-lg">{{ $recipe->cuisine->name }}</p>
                                 </div>
+                                <div class="bg-white p-4 rounded-lg shadow">
+                                    <p class="text-gray-600 flex items-center">
+                                        <i class="fas fa-leaf mr-2 text-indigo-500"></i>
+                                        Dietary Preferences
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        @forelse($recipe->dietaryPreferences as $preference)
+                                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                                                {{ $preference->name }}
+                                            </span>
+                                        @empty
+                                            <span class="text-gray-500 text-sm">No dietary preferences specified</span>
+                                        @endforelse
+                                    </div>
+                                </div>
                             </div>
                         </div>
     

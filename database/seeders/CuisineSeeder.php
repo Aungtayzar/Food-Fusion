@@ -13,7 +13,7 @@ class CuisineSeeder extends Seeder
      */
     public function run(): void
     {
-        // Load recipes data
+        // Load Cuisines data
         $cuisines = include database_path('seeders/data/cuisines.php');
 
         foreach ($cuisines as &$cuisine) {    
@@ -23,8 +23,8 @@ class CuisineSeeder extends Seeder
             $cuisine['updated_at'] = now();
         }
 
-            // Insert Recipes table
-            DB::table('cuisines')->insert($cuisines);
+        // Insert Cuisines table
+        DB::table('cuisines')->insert($cuisines);
 
     }
 }
