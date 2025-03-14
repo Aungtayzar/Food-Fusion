@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\CulinaryResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class CulinaryResourceController extends Controller
 {
+    use AuthorizesRequests;
     // @desc   Show all the Culinary Resource
     // @route  GET/culinary-resources
     public function index()
@@ -46,6 +48,7 @@ class CulinaryResourceController extends Controller
     // @route  POST/culinary-resources
     public function create()
     {
+        $this->authorize('create', CulinaryResource::class);
         return view('culinary-resources.create');
     }
 

@@ -16,9 +16,11 @@
                     all="Sort by"
                 />
             </form>
+            @if (auth()->user()->role === 'admin')
             <a href="{{ route('culinary-resources.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                 Upload Resource
             </a>
+            @endif
         </div>
         @endauth
     </div>

@@ -10,6 +10,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     @vite('resources/css/app.css')
 </head>
 <body class="bg-white">
@@ -18,7 +19,10 @@
 
 @if(request()->is('/'))
 <x-recipe-header headermsg="Discover Global Fusion Flavors" submsg="Explore recipes that blend culinary traditions from around the world"/>
+<x-home-mission />
 @endif
+
+
 
 @if(request()->is('recipes'))
 <x-recipe-header headermsg="Fusion Recipes"/>

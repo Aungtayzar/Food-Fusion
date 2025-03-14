@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RecipesController;
@@ -26,9 +27,8 @@ Route::get('/favouriterecipes', [FavouriteRecipeController::class, 'index'])->na
 //dashboard myrecipes Route
 Route::get('/dashboardmyrecipes', [RecipesController::class, 'myrecipes'])->name('dashboardmyrecipes.myrecipes')->middleware('auth');
 
-//Recipe Collection Routes
-
-
+//about us Route
+Route::get('/aboutus',[AboutusController::class,'index'])->name('aboutus.index');
 
 //recipes Routes
 Route::get('/recipes/search', [RecipesController::class, 'search'])->name('recipes.search')->middleware('auth');

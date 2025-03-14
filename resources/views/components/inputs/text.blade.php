@@ -1,4 +1,4 @@
-@props(['label'=>null,'type'=>'text','placeholder'=>'','value'=>'','id','name','class'=>''])
+@props(['label'=>null,'type'=>'text','placeholder'=>'','value'=>'','id','name','class'=>'','required'=>false])
     @if($label)
     <label class="block text-gray-700 font-bold mb-2" for="{{$id}}">{{$label}}</label>
     @endif
@@ -8,6 +8,7 @@
         placeholder="{{$placeholder}}" 
         class="{{$class}}"
         value="{{old($name, $value)}}"
+        {{$required ? 'required': ''}}
     />
     @error($name)
     <p class="text-red-500 text-sm mt-1">{{$message}}</p>    

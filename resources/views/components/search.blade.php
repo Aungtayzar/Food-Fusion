@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center relative shadow-lg rounded mx-auto w-full max-w-3xl">
+<div class="flex justify-center items-center relative shadow-lg rounded mx-auto w-full max-w-3xl z-10">
     <form method="GET"
     action="{{ route('recipes.search') }}" class="w-full">
         <div class="relative w-full">

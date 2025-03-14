@@ -4,7 +4,8 @@
         <div class="text-2xl font-bold w-full md:w-auto md:text-left mb-2 md:mb-0"><a href="/">Food Fusion</a></div>
         <nav class="hidden md:flex bg-orange-500  p-4 justify-between items-center">
             <div class="flex flex-wrap justify-center w-full md:w-auto space-x-2 md:space-x-4">    
-                <x-nav-link url="/" :active="request()->is('/')">Home</x-nav-link>          
+                <x-nav-link url="/" :active="request()->is('/')">Home</x-nav-link>     
+                <x-nav-link url="/aboutus" :active="request()->is('aboutus')">About Us</x-nav-link>   
                 @auth
                 <x-nav-link url="/recipes" :active="request()->is('recipes')">Recipes</x-nav-link>
                 <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')">Culinary Resources</x-nav-link>
@@ -32,6 +33,7 @@
                       </button>
                 </form>
                 @else
+                <x-sign-up-modal-box />  
                 <x-button-link url="/login">Login</x-button-link>
                 @endauth
             </div>
@@ -47,11 +49,12 @@
             id="mobile-menu"
             class="md:hidden bg-orange-500 text-white mt-5 pb-4 space-y-2"
         >
+        <x-nav-link url="/" :active="request()->is('/')" :mobile="true">Home</x-nav-link>
+        <x-nav-link url="/aboutus" :active="request()->is('aboutus')" :mobile="true">About Us</x-nav-link>   
             @auth   
             <x-nav-link url="/recipes" :active="request()->is('recipes')" :mobile="true">Recipes</x-nav-link>
             <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')" :mobile="true">Culinary Resources</x-nav-link>
-            <x-nav-link url="/cuisines" :active="request()->is('cuisines')" :mobile="true">Cuisines</x-nav-link>
-            <x-nav-link url="/community" :active="request()->is('community')" :mobile="true">Community</x-nav-link>
+            <x-nav-link url="/dashboard" :active="request()->is('dashboard')" :mobile="true">Dashboard</x-nav-link>
             <form action="{{route('logout')}}" method="POST">
                 @csrf
                 <button type="submit" class="text-white ms-4">
@@ -60,7 +63,8 @@
             </form>
             <x-button-link url="/recipes/create" icon="edit" >Create Recipe</x-button-link>
             @else
-            <a href="./loginandregister.html" class="block px-4 py-2 hover:bg-orange-700"
+            <x-sign-up-modal-box />
+            <a href="{{ route('login') }}" class="block px-4 py-2 hover:bg-orange-700"
                 >Login</a
             >
             @endauth
