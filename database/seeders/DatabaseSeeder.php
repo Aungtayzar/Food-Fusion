@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         DB::table('recipe_dietary_preferences')->truncate();
         
         $this->call(TestUserSeeder::class); 
+        $this->call(GuestUserSeeder::class); 
         $this->call(RandomUserSeeder::class);
         $this->call(CuisineSeeder::class);
         $this->call(RecipeSeeder::class);

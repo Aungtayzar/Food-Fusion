@@ -4,19 +4,24 @@
         <div class="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
             <div class="w-full md:w-auto">
                 <form action="{{ route('recipes.index') }}" method="GET" class="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                    @if(isset($cuisines))
                     <x-select-filter 
                         name="cuisine" 
                         :options="$cuisines" 
                         all="All Cuisines" 
                         class="w-full sm:w-auto mb-2 sm:mb-0"
                     />
+                    @endif
 
+                    @if(isset($dietaryPreferences))
                     <x-select-filter 
                         name="dietary_preference" 
                         :options="$dietaryPreferences" 
                         all="All Dietary Preferences" 
                         class="w-full sm:w-auto mb-2 sm:mb-0"
                     />
+                    @endif
+                    
                     <x-select-filter 
                         name="sort" 
                         :options="['latest' => 'Sort by Newest', 'oldest' => 'Sort by Oldest']" 

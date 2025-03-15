@@ -185,16 +185,21 @@ class RecipesController extends Controller
             ->orWhere('ingredients', 'LIKE', "%{$search}%")
             ->latest()
             ->paginate(9);
+        
+        // Add to provide the variables for the filters
+        $dietaryPreferences = DietaryPreference::orderBy('name')->get()->pluck('name','id')->toArray();
+        $cuisines = Cuisine::orderBy('name')->get()->pluck('name','id')->toArray();
             
-        return view('recipes.index', compact('recipes'));
+        return view('recipes.index', compact('recipes', 'cuisines', 'dietaryPreferences'));
     }
 
     // @desc   Search recipes
     // @route  GET /dashboardmyrecipes
     public function myrecipes(): View
     {
+        $adminrecipes = Recipe::paginate(9);
         $recipes = auth()->user()->recipes()->latest()->paginate(9);
-        return view('dashboard.myrecipes', compact('recipes'));
+        return view('dashboard.myrecipes', compact('recipes','adminrecipes'));
     }
 
 }
