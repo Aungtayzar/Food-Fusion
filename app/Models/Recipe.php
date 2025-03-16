@@ -51,8 +51,7 @@ class Recipe extends Model
     //Relation to DietaryPreference
     public function dietaryPreferences() : BelongsToMany
     {
-        return $this->belongsToMany(DietaryPreference::class, 'recipe_dietary_preferences')
-                    ->withTimestamps();
+        return $this->belongsToMany(DietaryPreference::class, 'recipe_dietary_preferences');
     }
 
     public function isFavoritedByUser($userId)

@@ -13,9 +13,7 @@
                                     <form action="{{ route('recipes.favorite.toggle', $recipe) }}" method="POST">
                                         @csrf
                                         <button type="submit" class="text-red-500 hover:text-red-700">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                                            </svg>
+                                            <i class="fa-solid fa-heart"></i>
                                         </button>
                                     </form>
                                 </div>
@@ -27,29 +25,26 @@
                                 <p class="text-gray-600 text-sm mb-4">{{ Str::limit($recipe->description, 100) }}</p>
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center space-x-4">
-                                        <span class="text-sm text-gray-500 flex items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                            {{ $recipe->cooking_time }} mins
-                                        </span>
-                                        <span class="text-sm text-gray-500 flex items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
-                                            {{ $recipe->user->name }}
-                                        </span>
+                                        <div class="text-sm text-gray-500 flex items-center space-x-2">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <span>{{ $recipe->cooking_time }} mins</span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 flex items-center space-x-2">
+                                            <i class="fa-regular fa-user"></i>
+                                            <span>{{ $recipe->user->name }}</span>
+                                        </div>
                                     </div>
-                                    <a href="{{ route('recipes.show', $recipe) }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
-                                        View Recipe
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                        </svg>
+                                    <a href="{{ route('recipes.show', $recipe) }}" class="flex justify-center items-center text-blue-600 hover:text-blue-800 text-sm font-medium space-x-2">
+                                        <span>View Recipe</span>
+                                        <i class="fa-solid fa-arrow-right-long"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     @endforeach
+                </div>
+                <div class="mt-4">
+                    {{ $favouriteRecipes->links() }}
                 </div>
             @else
                 <div class="text-center py-12">

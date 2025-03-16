@@ -14,7 +14,7 @@ class FavouriteRecipeController extends Controller
     public function index():View
     {
         $user = auth()->user();
-        $favouriteRecipes = Recipe::whereIn('id', $user->favorites()->pluck('recipe_id'))->get();
+        $favouriteRecipes = Recipe::whereIn('id', $user->favorites()->pluck('recipe_id'))->paginate(9);
         
         return view('favourite-recipes.index', compact('favouriteRecipes'));
     }

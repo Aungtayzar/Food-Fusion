@@ -42,7 +42,7 @@
 <x-recipe-header headermsg="Fusion Recipes"/>
 @endif
     <main class="container mx-auto p-4 mt-4">
-        @if(!request()->is('/'))
+        @if(!request()->is('/') && !request()->is('contactus'))
         @if (session('success'))
         <x-alert type="success" message="{{ session('success') }}" />
         @endif

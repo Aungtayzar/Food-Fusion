@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         DB::table('recipe_comments')->truncate();
         DB::table('dietary_preferences')->truncate();
         DB::table('recipe_dietary_preferences')->truncate();
+        DB::table('contact_us')->truncate();
         
         $this->call(TestUserSeeder::class); 
         $this->call(GuestUserSeeder::class); 
@@ -31,5 +32,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RecipeCommentSeeder::class);
         $this->call(DietaryPreferenceSeeder::class);
         $this->call(RecipeDietaryPreferenceSeeder::class);
+        $this->call(MessageSeeder::class);
     }
 }

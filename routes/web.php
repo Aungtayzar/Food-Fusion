@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RecipesController;
@@ -15,20 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[HomeController::class,'index'])->name('home');
+
 //Dashboard Routes
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard')->middleware('auth');
-
-//Profile
 Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
-
-//Favourit Recipes Route
-Route::get('/favouriterecipes', [FavouriteRecipeController::class, 'index'])->name('favouriterecipes.index')->middleware('auth');
-
-//dashboard myrecipes Route
-Route::get('/dashboardmyrecipes', [RecipesController::class, 'myrecipes'])->name('dashboardmyrecipes.myrecipes')->middleware('auth');
+Route::get('/dashboard/contact',[DashboardController::class,'contact'])->name('dashboard.contact')->middleware('auth');
+Route::get('/dashboard/favouriterecipes', [FavouriteRecipeController::class, 'index'])->name('favouriterecipes.index')->middleware('auth');
+Route::get('/dashboard/myrecipes', [RecipesController::class, 'myrecipes'])->name('dashboardmyrecipes.myrecipes')->middleware('auth');
 
 //about us Route
 Route::get('/aboutus',[AboutusController::class,'index'])->name('aboutus.index');
+
+//Contact Us Routes
+Route::get('/contactus',[ContactUsController::class,'index'])->name('contactus.index')->middleware('auth');
+Route::post('/contactus',[ContactUsController::class,'store'])->name('contactus.store')->middleware('auth');
 
 //recipes Routes
 Route::get('/recipes/search', [RecipesController::class, 'search'])->name('recipes.search')->middleware('auth');

@@ -9,6 +9,7 @@
                 @auth
                 <x-nav-link url="/recipes" :active="request()->is('recipes')">Recipes</x-nav-link>
                 <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')">Culinary Resources</x-nav-link>
+                <x-nav-link url="/contactus" :active="request()->is('contactus')">Contact Us</x-nav-link>
                 <div class="flex items-center space-x-3">
                     <a href="{{ route('dashboard') }}">
                       @if(Auth::user()->avatar)
@@ -55,6 +56,7 @@
             <x-nav-link url="/recipes" :active="request()->is('recipes')" :mobile="true">Recipes</x-nav-link>
             <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')" :mobile="true">Culinary Resources</x-nav-link>
             <x-nav-link url="/dashboard" :active="request()->is('dashboard')" :mobile="true">Dashboard</x-nav-link>
+            <x-nav-link url="/contactus" :active="request()->is('contactus')" :mobile="true">Contact Us</x-nav-link>
             <form action="{{route('logout')}}" method="POST">
                 @csrf
                 <button type="submit" class="text-white ms-4">
