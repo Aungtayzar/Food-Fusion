@@ -5,7 +5,7 @@
 
             <!-- Messages List -->
             <div class="bg-white rounded-lg shadow overflow-hidden">
-                <div class="min-w-full">
+                <div class="min-w-full overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                             <tr>
@@ -21,11 +21,9 @@
                                 <tr class="hover:bg-gray-50 transition-colors duration-200">
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
-                                            
                                             <div class="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-800 font-semibold text-sm">
-                                               {{ $idx + 1 }}
+                                                {{ $idx + $messages->firstItem() }}
                                             </div>
-                                            
                                             <div class="ml-4">
                                                 <div class="text-sm font-medium text-gray-900">
                                                     {{ $message->name }}

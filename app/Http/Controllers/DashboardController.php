@@ -27,7 +27,7 @@ class DashboardController extends Controller
         
         $messages = ContactUs::with('user')
             ->latest()
-            ->paginate(10);
+            ->paginate(10)->appends(request()->query('page'));
             
         return view('dashboard.contact', compact('messages'));
     }

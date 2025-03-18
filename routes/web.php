@@ -8,6 +8,7 @@ use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CulinaryResourceController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EducationalResourceController;
 use App\Http\Controllers\FavouriteRecipeController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ProfileController;
@@ -35,6 +36,12 @@ Route::post('/contactus',[ContactUsController::class,'store'])->name('contactus.
 Route::get('/recipes/search', [RecipesController::class, 'search'])->name('recipes.search')->middleware('auth');
 Route::resource('/recipes',RecipesController::class)->middleware('auth')->only(['create','edit','destory']);
 Route::resource('/recipes',RecipesController::class)->middleware('auth')->except(['create','edit','destory']);
+
+// Eductional Resources Routes
+Route::get('/educational-resources', [EducationalResourceController::class, 'index'])->name('educational-resources.index')->middleware('auth');
+Route::get('/educational-resources/download/{resource}', [EducationalResourceController::class, 'download'])->name('educational-resources.download')->middleware('auth');
+Route::get('/educational-resources/view/{resource}', [EducationalResourceController::class, 'view'])->name('educational-resources.view')->middleware('auth');
+Route::get('/educational-resources/watch/{resource}', [EducationalResourceController::class, 'watch'])->name('educational-resources.watch')->middleware('auth');
 
 // Recipe interactions
 Route::middleware(['auth'])->group(function () {
