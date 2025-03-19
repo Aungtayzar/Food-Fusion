@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EducationalResource extends Model
 {
@@ -32,5 +33,11 @@ class EducationalResource extends Model
         } else {
             return asset('storage/' . $this->file_path);
         }
+    }
+
+    //releation to user
+    public function user():BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

@@ -80,4 +80,8 @@ class User extends Authenticatable implements CanResetPassword
     {
         return $this->hasMany(RecipeComment::class);
     }
+
+    public function eductional():HasMany{
+        return $this->hasMany(EducationalResource::class);
+    }
 }

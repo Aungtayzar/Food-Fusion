@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('recipe_id')->constrained()->onDelete('cascade');
             $table->foreignId('dietary_preference_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-            $table->unique(['recipe_id', 'dietary_preference_id']);
+            $table->unique(['recipe_id', 'dietary_preference_id'], 'recipe_dietary_preference_unique');
         });
     }
 

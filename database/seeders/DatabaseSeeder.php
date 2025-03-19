@@ -14,6 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        // Disable foreign key checks
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+ 
+
         DB::table('users')->truncate();
         DB::table('cuisines')->truncate();
         DB::table('recipes')->truncate();
@@ -23,6 +28,10 @@ class DatabaseSeeder extends Seeder
         DB::table('recipe_dietary_preferences')->truncate();
         DB::table('contact_us')->truncate();
         DB::table('educational_resources')->truncate();
+
+
+        // Re-enable foreign key checks
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         
         $this->call(TestUserSeeder::class); 
         $this->call(GuestUserSeeder::class); 
