@@ -31,4 +31,5 @@ class DashboardController extends Controller
             
         return view('dashboard.contact', compact('messages'));
     }
+
 }

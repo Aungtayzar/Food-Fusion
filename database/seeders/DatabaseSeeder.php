@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         DB::table('recipe_dietary_preferences')->truncate();
         DB::table('contact_us')->truncate();
         DB::table('educational_resources')->truncate();
+        DB::table('events')->truncate();
 
 
         // Re-enable foreign key checks
@@ -44,5 +45,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RecipeDietaryPreferenceSeeder::class);
         $this->call(MessageSeeder::class);
         $this->call(EducationalResourcesSeeder::class);
+        $this->call(EventSeeder::class);
     }
 }

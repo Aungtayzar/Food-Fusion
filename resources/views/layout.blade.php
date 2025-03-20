@@ -11,6 +11,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    @stack('styles')
     @vite('resources/css/app.css')
 </head>
 <body class="bg-white">
@@ -90,6 +91,7 @@
 @endif
 
 <!-- Scripts -->
+@stack('scripts')
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
     $(document).ready(function() {

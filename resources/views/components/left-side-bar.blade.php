@@ -33,10 +33,23 @@
             </a>
             @can('viewAny', App\Models\ContactUs::class)
                 <a href="{{ route('dashboard.contact') }}" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-200 gap-3">
-                    <i class="fa-solid fa-message"></i> 
+                    <i class="fa-regular fa-message"></i> 
                     <span>Contact</span>
                 </a>
             @endcan
+
+            <a href="{{route('cuisines.index')}}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('favouriterecipes') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
+                <i class="fa-solid fa-globe"></i>
+                <span>Cuisines Mangement</span>
+            </a>
+
+            @can('viewAny', App\Models\Event::class)
+            <a href="{{route('events.index')}}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('favouriterecipes') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Events Mangement</span>
+            </a> 
+            @endcan
+            
         </nav>
     </div>
 

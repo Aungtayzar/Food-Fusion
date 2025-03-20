@@ -31,8 +31,7 @@ class EducationalResourceController extends Controller
     
     public function view(EducationalResource $resource)
     {
-        // For infographics
-        $resource->increment('download_count');
+        // Get related resources
         $relatedResources = EducationalResource::where('id', '!=', $resource->id)
         ->where(function($query) use ($resource) {
             $query->where('type', $resource->type)

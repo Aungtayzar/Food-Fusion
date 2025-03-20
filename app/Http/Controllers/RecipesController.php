@@ -45,9 +45,8 @@ class RecipesController extends Controller
         return view('recipes.index', compact('recipes', 'cuisines','dietaryPreferences'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // @desc   Show Create recipes Form
+    // @route  GET /recipes
     public function create() : View
     {
         $dietaryPreferences = DietaryPreference::orderBy('name')->get()->pluck('name','id')->toArray();
@@ -96,16 +95,15 @@ class RecipesController extends Controller
         return redirect()->route('recipes.index')->with('success','New Recipe successfully created');
     }
 
-    // @desc   Show all the recipes
+    // @desc   Show recipe detail
     // @route  GET/recipes/{recipe}
     public function show(Recipe $recipe):View
     {   
         return view('recipes.show')->with('recipe',$recipe);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    // @desc   Show recipe Form
+    // @route  GET/recipes/{recipe}
     public function edit(Recipe $recipe):View
     {
         // Check if the user is authorized
@@ -158,7 +156,7 @@ class RecipesController extends Controller
     }
 
     // @desc   delete a  recipe
-    // @route  DESTORY /recipes/{recipe}
+    // @route  DELETE /recipes/{recipe}
     public function destroy(Recipe $recipe):RedirectResponse
     {
         // Check if the user is authorized

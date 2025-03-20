@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\CuisineController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RecipesController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CulinaryResourceController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EducationalResourceController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\FavouriteRecipeController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ProfileController;
@@ -36,6 +38,15 @@ Route::post('/contactus',[ContactUsController::class,'store'])->name('contactus.
 Route::get('/recipes/search', [RecipesController::class, 'search'])->name('recipes.search')->middleware('auth');
 Route::resource('/recipes',RecipesController::class)->middleware('auth')->only(['create','edit','destory']);
 Route::resource('/recipes',RecipesController::class)->middleware('auth')->except(['create','edit','destory']);
+
+//events Routes
+Route::resource('/events', EventController::class)->middleware('auth')->only(['create','edit','destory']);
+Route::resource('/events', EventController::class)->middleware('auth')->except(['create','edit','destory']);
+
+
+
+//Cuisines Routes 
+Route::resource('/cuisines',CuisineController::class)->middleware('auth');
 
 // Eductional Resources Routes
 Route::get('/educational-resources', [EducationalResourceController::class, 'index'])->name('educational-resources.index')->middleware('auth');
