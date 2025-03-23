@@ -32,4 +32,9 @@ class DashboardController extends Controller
         return view('dashboard.contact', compact('messages'));
     }
 
+    public function policy():View
+    {
+        return view('policy.index');
+    }
+
 }

@@ -39,10 +39,22 @@ class RecipesController extends Controller
             });
         }
 
+        // Filter by difficulty level
+        if (request('difficulty_level')) {
+            $query->where('difficulty_level', request('difficulty_level'));
+        }
+
+        $difficulty_level = [
+            'easy' => 'Easy',
+            'medium' => 'Medium',
+            'hard' => 'Hard'
+        ];
+
+
         $dietaryPreferences = DietaryPreference::orderBy('name')->get()->pluck('name','id')->toArray();
         $recipes = $query->paginate(9)->withQueryString();
         $cuisines = Cuisine::orderBy('name')->get()->pluck('name','id')->toArray();
-        return view('recipes.index', compact('recipes', 'cuisines','dietaryPreferences'));
+        return view('recipes.index', compact('recipes', 'cuisines','dietaryPreferences','difficulty_level'));
     }
 
     // @desc   Show Create recipes Form
@@ -183,12 +195,18 @@ class RecipesController extends Controller
             ->orWhere('ingredients', 'LIKE', "%{$search}%")
             ->latest()
             ->paginate(9);
+
+        $difficulty_level = [
+            'easy' => 'Easy',
+            'medium' => 'Medium',
+            'hard' => 'Hard'
+        ];
         
         // Add to provide the variables for the filters
         $dietaryPreferences = DietaryPreference::orderBy('name')->get()->pluck('name','id')->toArray();
         $cuisines = Cuisine::orderBy('name')->get()->pluck('name','id')->toArray();
             
-        return view('recipes.index', compact('recipes', 'cuisines', 'dietaryPreferences'));
+        return view('recipes.index', compact('recipes', 'cuisines', 'dietaryPreferences','difficulty_level'));
     }
 
     // @desc   Search recipes

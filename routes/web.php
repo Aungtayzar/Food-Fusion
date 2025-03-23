@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\CommunityCookbookController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\CuisineController;
 use App\Http\Controllers\HomeController;
@@ -43,7 +44,8 @@ Route::resource('/recipes',RecipesController::class)->middleware('auth')->except
 Route::resource('/events', EventController::class)->middleware('auth')->only(['create','edit','destory']);
 Route::resource('/events', EventController::class)->middleware('auth')->except(['create','edit','destory']);
 
-
+//Community cookbook Route
+Route::get('/communitycookbooks',[CommunityCookbookController::class,'index'])->name('community.index')->middleware('auth');
 
 //Cuisines Routes 
 Route::resource('/cuisines',CuisineController::class)->middleware('auth');
@@ -74,6 +76,9 @@ Route::middleware('guest')->group(function(){
     Route::post('/reset-password',[ForgotPasswordController::class,'passwordUpdate'])->name('password.update');
 
 });
+
+//Policy Route
+Route::get('/policy',[DashboardController::class,'policy'])->name('policy.index');
 
 //logout Route
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');

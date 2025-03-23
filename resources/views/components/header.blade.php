@@ -8,6 +8,7 @@
                 <x-nav-link url="/aboutus" :active="request()->is('aboutus')">About Us</x-nav-link>   
                 @auth
                 <x-nav-link url="/recipes" :active="request()->is('recipes')">Recipes</x-nav-link>
+                <x-nav-link url="/communitycookbooks" :active="request()->is('communitycookbooks')">Community Cookbooks</x-nav-link>
                 <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')">Culinary Resources</x-nav-link>
                 <x-nav-link url="/educational-resources" :active="request()->is('educational-resources')">Educational Resources</x-nav-link>
                 <x-nav-link url="/contactus" :active="request()->is('contactus')">Contact Us</x-nav-link>
@@ -55,6 +56,7 @@
         <x-nav-link url="/aboutus" :active="request()->is('aboutus')" :mobile="true">About Us</x-nav-link>   
             @auth   
             <x-nav-link url="/recipes" :active="request()->is('recipes')" :mobile="true">Recipes</x-nav-link>
+            <x-nav-link url="/communitycookbooks" :active="request()->is('communitycookbooks')" :mobile="true">Community Cookbooks</x-nav-link>
             <x-nav-link url="/culinary-resources" :active="request()->is('culinary-resources')" :mobile="true">Culinary Resources</x-nav-link>
             <x-nav-link url="/educational-resources" :active="request()->is('educational-resources')" :mobile="true">Educational Resources</x-nav-link>
             <x-nav-link url="/dashboard" :active="request()->is('dashboard')" :mobile="true">Dashboard</x-nav-link>

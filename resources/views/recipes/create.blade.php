@@ -40,7 +40,7 @@
             </div>
 
             <!-- Cuisine and Difficulty -->
-            <div class="grid md:grid-cols-3 gap-4 mt-4">
+            <div class="grid md:grid-cols-2 gap-4 mt-4">
                 <x-inputs.select label="Cuisine Type" name="cuisine_id" id="cuisine_id" :options="$cuisines" />
                 <x-inputs.select label="Difficulty Level" name="difficulty_level" id="difficulty_level" :options="['easy'=>'Easy','medium'=>'Medium','hard'=>'Hard']" />
             </div>

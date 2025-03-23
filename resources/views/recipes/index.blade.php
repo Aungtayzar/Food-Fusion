@@ -21,6 +21,13 @@
                         class="w-full sm:w-auto mb-2 sm:mb-0"
                     />
                     @endif
+
+                    <x-select-filter 
+                        name="difficulty_level" 
+                        :options="$difficulty_level" 
+                        all="All Levels"
+                        class="w-full sm:w-auto mb-2 sm:mb-0" 
+                    />
                     
                     <x-select-filter 
                         name="sort" 
@@ -28,11 +35,13 @@
                         all="Sort by"
                         class="w-full sm:w-auto"
                     />
+
+                    
                 </form>
             </div>
-            <div class="w-full md:w-auto flex justify-start md:justify-end">
-                <x-button-link url="/recipes/create" bgColor="orange-500" textColor="text-white" icon="edit">Create Recipe</x-button-link>
-            </div>
+            <a href="{{ route('recipes.create') }}" class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                <i class="fas fa-plus mr-2"></i>Add Recipe
+            </a>
         </div>
     </div>
 

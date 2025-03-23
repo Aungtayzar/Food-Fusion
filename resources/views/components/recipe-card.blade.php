@@ -13,8 +13,21 @@
     <div class="p-4">
         <h3 class="font-bold text-xl mb-2">{{$recipe->title}}</h3>
         <div class="flex items-center mb-2">
-            <i class="fas fa-star text-yellow-400 mr-1"></i>
-            <span>4.5 (120 reviews)</span>
+            <div>
+                @if(strtolower($recipe->difficulty_level) == 'easy')
+                    <span class="text-xs font-medium px-2 py-1 rounded bg-green-100 text-green-800">
+                        <i class="fas fa-smile-beam mr-1"></i>Easy
+                    </span>
+                @elseif(strtolower($recipe->difficulty_level) == 'medium')
+                    <span class="text-xs font-medium px-2 py-1 rounded bg-yellow-100 text-yellow-800">
+                        <i class="fas fa-meh mr-1"></i>Medium
+                    </span>
+                @elseif(strtolower($recipe->difficulty_level) == 'hard')
+                    <span class="text-xs font-medium px-2 py-1 rounded bg-red-100 text-red-800">
+                        <i class="fas fa-fire mr-1"></i>Hard
+                    </span>
+                @endif
+            </div>
         </div>
         <div class="flex justify-between items-center">
             <span class="text-sm text-gray-500">Cooking Time: {{$recipe->cooking_time}}</span>
