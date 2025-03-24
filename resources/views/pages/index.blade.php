@@ -96,6 +96,8 @@
             @endif
         </section>
 
+        <x-culinary-trend />
+
         <!-- Add this to your layout or at the end of the file -->
         @push('styles')
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />

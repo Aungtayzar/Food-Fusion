@@ -6,6 +6,7 @@ use App\Models\Event;
 use App\Models\Recipe;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
@@ -17,5 +18,10 @@ class HomeController extends Controller
         $upcomingEvents = Event::upcoming()->paginate(6);
     
         return view('pages.index',compact('recipes','featuredEvents', 'upcomingEvents'));
+    }
+
+    public function policy():View
+    {
+        return view('policy.index');
     }
 }

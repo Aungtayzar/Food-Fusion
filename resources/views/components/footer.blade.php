@@ -4,7 +4,7 @@
             <h4 class="font-bold mb-4">Quick Links</h4>
             <ul>
                 <li class="mb-2"><a href="{{ route('aboutus.index') }}" class="hover:text-orange-300 transition-all duration-75 outline-none">About Us</a></li>
-                <li class="mb-2"><a href="{{ route('policy.index') }}" class="hover:text-orange-300 transition-all duration-75 outline-none">Policy</a></li>
+                <li class="mb-2"><a href="{{ route('policy.index') }}" class="hover:text-orange-300 transition-all duration-75 outline-none">Privacy Policy</a></li>
                 <li class="mb-2"><a href="{{ route('contactus.index') }}" class="hover:text-orange-300 transition-all duration-75 outline-none">Contact Us</a></li>
             </ul>
         </div>

@@ -97,6 +97,8 @@ class EventController extends Controller
             $path = $request->file('image')->store('events', 'public');
             $validated['image_path'] = $path;
         }
+
+        $validated['user_id'] = auth()->user()->id;
         
         $event->update($validated);
         

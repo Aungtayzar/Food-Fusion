@@ -21,12 +21,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 
+
+//Policy Route
+Route::get('/policy',[HomeController::class,'policy'])->name('policy.index');
+
 //Dashboard Routes
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard')->middleware('auth');
 Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
 Route::get('/dashboard/contact',[DashboardController::class,'contact'])->name('dashboard.contact')->middleware('auth');
 Route::get('/dashboard/favouriterecipes', [FavouriteRecipeController::class, 'index'])->name('favouriterecipes.index')->middleware('auth');
 Route::get('/dashboard/myrecipes', [RecipesController::class, 'myrecipes'])->name('dashboardmyrecipes.myrecipes')->middleware('auth');
+
 
 //about us Route
 Route::get('/aboutus',[AboutusController::class,'index'])->name('aboutus.index');
@@ -77,8 +82,7 @@ Route::middleware('guest')->group(function(){
 
 });
 
-//Policy Route
-Route::get('/policy',[DashboardController::class,'policy'])->name('policy.index');
+
 
 //logout Route
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');

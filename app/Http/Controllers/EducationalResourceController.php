@@ -37,6 +37,7 @@ class EducationalResourceController extends Controller
             $query->where('type', $resource->type)
                   ->orWhere('featured', true);
         })->latest()->take(3)->get();
+
         return view('educational-resources.view', compact('resource','relatedResources'));
     }
     
@@ -45,7 +46,7 @@ class EducationalResourceController extends Controller
         // For videos
         $resource->increment('download_count');
          // Get related videos
-    $relatedVideos = EducationalResource::where('id', '!=', $resource->id)->where('type', 'video')->latest()->take(4)->get();
+         $relatedVideos = EducationalResource::where('id', '!=', $resource->id)->where('type', 'video')->latest()->take(4)->get();
         return view('educational-resources.watch', compact('resource','relatedVideos'));
     }
 }

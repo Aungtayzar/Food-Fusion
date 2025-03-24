@@ -50,3 +50,4 @@
         <p class="text-gray-700 mb-4">If you have any questions, please visit our <a href="{{ url('/contactus') }}" class="text-blue-500 hover:underline">Contact Us</a> page.</p>
     </div>
 </x-layout>
+<x-footer />
