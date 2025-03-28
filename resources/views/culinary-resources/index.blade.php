@@ -1,6 +1,6 @@
 <x-layout>
 <div class="container mx-auto px-4 py-8">
-    <div class="flex justify-between items-center mb-6">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6">
         <h1 class="text-3xl font-bold text-gray-800">Culinary Resources</h1>
         @auth
         <div class="flex items-center space-x-4">

@@ -52,8 +52,6 @@ Route::resource('/events', EventController::class)->middleware('auth')->except([
 //Community cookbook Route
 Route::get('/communitycookbooks',[CommunityCookbookController::class,'index'])->name('community.index')->middleware('auth');
 
-//Cuisines Routes 
-Route::resource('/cuisines',CuisineController::class)->middleware('auth');
 
 // Eductional Resources Routes
 Route::get('/educational-resources', [EducationalResourceController::class, 'index'])->name('educational-resources.index')->middleware('auth');

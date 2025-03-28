@@ -16,13 +16,13 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->enum('type', ['document', 'infographic', 'video']);
-            $table->string('file_path')->nullable(); // For downloadable files
-            $table->string('thumbnail')->nullable(); // Thumbnail image
-            $table->string('video_url')->nullable(); // YouTube/Vimeo URL for videos
-            $table->string('image_path')->nullable(); // For infographics
+            $table->string('file_path')->nullable(); 
+            $table->string('thumbnail')->nullable(); 
+            $table->string('video_url')->nullable(); 
+            $table->string('image_path')->nullable(); 
             $table->boolean('featured')->default(false);
             $table->unsignedInteger('download_count')->default(0);
-            $table->string('file_size')->nullable(); // For downloadable files
+            $table->string('file_size')->nullable(); 
             $table->string('file_format')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();

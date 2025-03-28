@@ -23,28 +23,23 @@
                 <i class="fa-regular fa-user"></i>
                 <span>Profile</span>
             </a>
-            <a href="{{ route('dashboardmyrecipes.myrecipes') }}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('dashboardmyrecipes') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
+            <a href="{{ route('dashboardmyrecipes.myrecipes') }}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('dashboard/myrecipes') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
                 <i class="fa-regular fa-bookmark"></i>
                 <span>My Recipes</span>
             </a>
-            <a href="{{route('favouriterecipes.index')}}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('favouriterecipes') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
+            <a href="{{route('favouriterecipes.index')}}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('dashboard/favouriterecipes') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
                 <i class="fa-regular fa-heart"></i>
                 <span>Favorite Recipes</span>
             </a>
             @can('viewAny', App\Models\ContactUs::class)
-                <a href="{{ route('dashboard.contact') }}" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-200 gap-3">
+                <a href="{{ route('dashboard.contact') }}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('dashboard/contact') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
                     <i class="fa-regular fa-message"></i> 
                     <span>Contact</span>
                 </a>
             @endcan
 
-            <a href="{{route('cuisines.index')}}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('favouriterecipes') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
-                <i class="fa-solid fa-globe"></i>
-                <span>Cuisines Mangement</span>
-            </a>
-
             @can('viewAny', App\Models\Event::class)
-            <a href="{{route('events.index')}}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('favouriterecipes') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
+            <a href="{{route('events.index')}}" class="flex items-center px-4 py-3 text-gray-600 {{request()->is('events') ? 'bg-gray-200' : 'bg-white'}} hover:bg-gray-200 gap-3">
                 <i class="fa-regular fa-calendar"></i>
                 <span>Events Mangement</span>
             </a> 

@@ -21,7 +21,6 @@
 @if(request()->is('/'))
 <x-recipe-header headermsg="Discover Global Fusion Flavors" submsg="Explore recipes that blend culinary traditions from around the world"/>
 @endif
-
 @if(request()->is('/'))
 @if (session('success'))
     <x-alert type="success" message="{{ session('success') }}" />
@@ -36,9 +35,6 @@
 @endif
 <x-home-mission />
 @endif
-
-
-
 @if(request()->is('recipes'))
 <x-recipe-header headermsg="Fusion Recipes"/>
 @endif
@@ -58,7 +54,6 @@
         @endif 
         {{$slot}}
     </main>
-
 @if(request()->is('/'))
 <!-- Footer  -->
 <x-footer />

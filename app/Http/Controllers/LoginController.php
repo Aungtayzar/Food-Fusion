@@ -10,7 +10,6 @@ use Illuminate\View\View;
 
 class LoginController extends Controller
 {
-
     public function login(): View {
         return view('auth.login');
     }
@@ -21,7 +20,7 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
 
-        $throttleKey = 'login:' . $request->ip(); // login:127.0.0.1
+        $throttleKey = 'login:' . $request->ip(); // login:127.0.0.1 
         $maxAttempts = 3;
         $lockoutTime = 180; // 3 minutes in seconds
 
